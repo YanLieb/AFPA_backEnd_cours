@@ -1,0 +1,72 @@
+Pour se connecter via le terminal (mac) : 
+    /Applications/MAMP/Library/bin/mysql -uroot -p
+
+Depuis Windows : 
+    lancer une invite de commandes depuis le dossier bin dans mysql.
+    mysql -u root -p (pas de mot de passe sur xampp windows)
+
+Requêtes :
+
+SHOW DATABASES;
+    liste toutes les BDD présentes sur le serveur.
+
+CREATE DATABASE nomBDD DEFAULT CHARACTER SET utf8mb4;
+    crée une BDD.
+
+DROP DATABASE nomBDD;
+    efface une BDD.
+
+USE nomBDD;
+    se place dans la BDD à modifier.
+
+CREATE TABLE user( 
+    id_user INT(3) UNSIGNED NOT NULL AUTO_INCREMENT, 
+    nom VARCHAR(40) NOT NULL, prenom VARCHAR(40) NOT NULL, 
+    age INT(2), 
+    PRIMARY KEY(id_user) 
+    )
+    ENGINE=INNODB;
+        
+        crée une table user. InnoDB est le moteur de recherche choisie de la table; permet de définir les relations entre plusieurs tables.
+
+SHOW TABLES;
+    liste les tables d'une BDD.
+
+DESC nomTable;
+    affiche toutes les infos d'une table.
+
+
+CREATE
+**********
+INSERT INTO user (nom, prenom, age) VALUES ()
+);
+    ajouter des données dans une table.
+
+UPDATE
+**********
+UPDATE user SET age=50 WHERE user_id=2;
+    Met à jour l'âge de la ligne qui contient le champ user_id=2.
+
+DELETE
+**********
+DELETE FROM user WHERE user_id=4;
+    Supprime la ligne de la table user dont l'identifiant est 4.
+    Une requête DELETE sans clause WHERE affecte toutes les lignes de la table.
+
+REQUEST
+**********
+SELECT * FROM user;
+    affiche toutes les données d'une table.
+
+SELECT * FROM user ORDER BY prenom.
+    classe les données selon la colonne prenom.
+
+SELECT * FROM user LIMIT 1,2.
+    montre seulement deux entrées à partir de la deuxième entrée. (la première est 0).
+
+SELECT AVG(age) FROM user;
+    calcule la moyenne de la colonne d'entiers age.
+
+SELECT SUM(age) FROM user;
+    additionne les entiers de la colonne age.
+

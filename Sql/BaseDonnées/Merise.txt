@@ -1,0 +1,53 @@
+Merise : Méthode d'Etude et de Réalisation Informatique pour les Systèmes d'Entreprise
+
+1) Création d'un dictionnaire des données
+    - Réunion de l'ensemble des données élémentaires.
+    - Un dictionnaire peut se présenter sous forme de tableau : 
+        * chaque donnée constitue une ligne.
+        * chaque donnée peut être définie par plusieurs propriétés, formant les colonnes du tableau. Par ex :
+            _un code : Abbréviation explicite en camelCase.
+            _un libellé : définition de la donnée.
+            _un type : entier, réel, booleen, chaîne de caractère, etc.
+            _des contraintes : unicité, évolutivité, valeurs prédéfinies, plage de valeurs, valeurs par défaut, etc.
+            _des règles de calcul : si la donnée est obtenue par un calcul.
+
+2) Regroupement des entités par occurences
+    - On appelle alors ces entités des objets.
+    - les différentes données de chaque occurence d'un objet devienne ses propriétés.
+    - Certaines données sont interdépendantes : elles n'existent que dans le rapport de deux objets entre eux. Ces données seront alors des propriétés des associations définies à la prochaine étape.
+
+3) Définition des relations entre objets
+    - Ces relations sont appelées Association.
+    - Leur nom est généralement un verbe à l'infinitif.
+
+4) Identification des cardinalités de chaque relations
+    - Une relation peut soit exister (1 ou N fois) soit ne pas exister (0 fois).
+    - Une cardinalité est définie par ses quantités minimum et maximum possibles.
+
+5) Création du MCD
+    
+    MCD : Modèle Conceptuel de Données
+        - Pré-conception de la base de données sous forme de plan visuel.
+    
+    Eléments constituants un MCD :
+        Entité
+            - Ensemble d'objets similaires pouvant être regroupés ensemble.
+            - Représentée sous forme de rectangle.
+
+        Attributs
+            - Caractéristiques, propriétés d'une entité.
+            - Porte un nom et possède une valeur text, numérique, booléen, date, etc.)
+
+        Identifiant
+            - Ensemble minimal d'attributs déterminant de manière unique une occurence.
+            - = clé primaire.
+
+        Association
+            - Relie plusieurs entités entre elles.
+            - Portent des noms (verbes) et peuvent avoir des attributs.
+            - Représentée sous forme d'ellipse.
+
+        Cardinalité
+            - Nombres de fois minimum (0 ou 1) et maximum (1 ou N) qu'une entité peut apparaître dans une association.
+            - Caractérisée par le maximum de chaque côté d'une association (ex : 1,N ; N,N)
+

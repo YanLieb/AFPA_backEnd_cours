@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenements js</title>
+    <link rel="stylesheet" href="evenement.css">
+
+</head>
+
+<body>
+    <div class="conteneur">
+
+        <a href="" onclick="window.print()">Imprimer la page</a>
+
+        <hr>
+
+        <div class="div" id="div1" style="background-color: cornflowerblue;"></div>
+
+        <hr>
+
+        <div class="div" id="div2" style="background-color: Indigo; top: 0; left: 0"></div>
+
+        <hr>
+
+        <div id="blocImage1">
+            <img src="img/IMG_0224.JPG" alt="">
+            <img src="img/IMG_0221.JPG" alt="">
+        </div>
+
+        <hr>
+
+        <!-- Tout attribut d'un élément dont le nom commence par data- est un attribut de données : data attribute. Par exemple, dans le cas d'un article pour lequel on souhaite stocker des informations supplémentaires qui n'ont pas de représentation visuelle, il suffit d'utiliser des attributs de données : permet de stocker des données dans le HTML -->
+        <div id="blocImage2" data-image="image1">
+            <img src="img/IMG_0217.JPG" id="image1" alt="Lugh, Metal Band from Lyon, FR" style="opacity: 1;">
+            <img src="img/IMG_0221.JPG" id="image2" alt="Lugh, Metal Band from Lyon, FR">
+            <img src="img/IMG_0224.JPG" id="image3" alt="Lugh, Metal Band from Lyon, FR">
+            <img src="img/IMG_0233.JPG" id="image4" alt="Lugh, Metal Band from Lyon, FR">
+            <img src="img/IMG_0234.JPG" id="image5" alt="Lugh, Metal Band from Lyon, FR">
+        </div>
+        <a href="" id="changerImage">Changer d'image</a>
+
+        <hr>
+
+
+    </div>
+
+    <script src="evenement.js"></script>
+</body>
+
+</html>

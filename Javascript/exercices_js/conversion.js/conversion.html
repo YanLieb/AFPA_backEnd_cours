@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conversion.css">
+
+    <title>Conversion Fahrenheit / Celsius</title>
+</head>
+
+<body>
+    <section>
+        <h1>Outil de conversion entre degrés Celsius (°C) & degrés Fahrenheit (°F)</h1>
+
+        <div class="main">
+            <h2>Conversion Celsius / Fahrenheit</h2>
+
+            <div class="field">
+                <label for="tempCelsius">Indiquez la température en degrés Celsius :</label>
+                <input id="tempCelsius" type="number" step=".5" onkeyup="convCelsius();">
+                <button id=" submit" type="button" onclick="convCelsius();">Convertir!</button>
+            </div>
+
+            <div class="field">
+                <p>Si la température en degrés celsius est de : </p>
+                <span id="celsius1"></span>
+            </div>
+
+            <div class="field">
+                <p>alors la température en degrés Fahrenheit est de : </p>
+                <span id="fahrenheit1"></span>
+            </div>
+
+        </div>
+
+        <div class="main">
+            <h2>Conversion Fahrenheit / Celsius</h2>
+
+            <div class="field">
+                <label for="tempFahrenheit">Indiquez la température en degrés Fahrenheit :</label>
+                <input id="tempFahrenheit" type="number" step=".5" onkeyup="convFahrenheit();">
+                <button type="button" onclick="convFahrenheit();">Convertir!</button>
+            </div>
+
+            <div class="field">
+                <p>Si la température en degrés fahrenheit est de : </p>
+                <span id="fahrenheit2"></span>
+            </div>
+
+            <div class="field">
+                <p>alors la température en degrés celsius est de : </p>
+                <span id="celsius2"></span>
+            </div>
+
+        </div>
+
+        <div id="txt">
+            <p>C'est à Daniel Gabriel Fahrenheit que l'on doit l'invention des thermomètres en graduation Fahrenheit.
+            </p>
+            <p>Au
+                début, ses
+                thermomètres sont à l'alcool (1709), mais il remplace rapidement l'alcool par du mercure (1715),
+                permettant
+                à ses outils
+                de mesure de fournir des données comparables.</p>
+            <p>En 1742, un autre scientifique, Anders Celsius, propose une
+                nouvelle
+                graduation au thermomètre.</p>
+            <p>La conversion entre les échelles est donnée par :</p>
+            <code>[°F] = [°C] x 9/5 + 32</code>
+            <code>[C°] = (°F - 32) x 5/9</code>
+        </div>
+    </section>
+
+    <script src="conversion.js"></script>
+</body>
+
+</html>

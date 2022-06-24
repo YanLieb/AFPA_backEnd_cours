@@ -1,0 +1,110 @@
+Définition d'un Base de Données (BDD)
+**********
+À l'intérieur de la base de données, les informations sont classées, structurées et regroupées par sujet.
+Une BDD permet donc de regrouper des informations qui y sont stockées de manière efficace.
+On peut interroger une BDD comme suit :
+    "Combien d'utilisateurs sont inscrits sur ma mailing list?"
+    "Quel article dans mon blog contient tel ou tel mot-clé?"
+La force des BDD réside également dans leur possibilité de lier les différentes informations qui y sont préalablement stockées.
+
+Les différents SGBD
+**********
+Un Système de Gestion de Base de Données est un logiciel permettant d'introduire de mettre à jour, de supprimer et d'accéder aux données.
+
+CRUD ---
+Create : Insérer de nouveaux enregistrements (écriture).
+Read : Récupérer des enregistrements (lecture).
+Update : Mettre à jour des enregistrements (écriture).
+Delete : Supprimer des enregistrements (écriture).
+
+Le modèle relationnel consiste à stocker l'information dans des tables précisément définies par leur schéma (leurs différentes colonnes, clés primaires, clés étrangères).
+Cela permet de ne pas stocker l'information plusieurs fois, et de pouvoir facilement consolider les données avec des requêtes SQL et des jointures.
+
+On distingue deux principaux SGBD =
+Les SGBDR - Système de Gestion de Base de Données Relationnelles.
+Les NoSQL : Not Only SQL. Ressemble à un grand tableau PHP. Il n'y a plus de colonnes; on parle alors de bases de données clé-valeurs.
+
+On trouve dans les SGBDR des logiciels tels que : 
+MySql / MariaDB
+Microsoft SQL Server
+Oracle Database
+Sqlite
+SQL Server
+Les SGBD Nosql les plus courants : 
+MongoDB
+Firebase
+Redis
+Cassandra
+
+Le langage SQL
+**********
+Le SQL (Structured Query Language) est un langage informatique permettant d'interagir avec des bases de données relationnelles. Ce langage est normalisé depuis 1986.
+
+MySql
+**********
+MySql est un SGBDR. C'est l'un des systèmes les plus populaires au monde dans le domaine du web. Comme son nom l'indique, mySql utilise le langage SQL pour effectuer des requêtes.
+
+Les tables
+**********
+Au sein d'une base de données, une table est un ensemble de données organisées sous forme de tableau. C'est un emplacement de sauvegarde.
+
+On trouve ainsi dans une table =
+Des colonnes -> les champs
+Des lignes -> les données
+
+Il est possible de créer plusieurs tables dans une même BDD.
+Chaque table doit être nommée rigoureusement afin d'éviter les incohérences et d'avoir une maintenabilité aisée.
+De plus, il ne peut y avoir deux tables ayant le même nom dans une même base de données, car les requêtes SQL s'effectuent sur une table de données.
+\!/ 1 sujet = 1 table \!/
+
+Les types de données
+**********
+Les colonnes servent à contenir chacune un certain type de données précis.
+3 grandes catégories de champs ressortent : les types numériques, chaînes de caractère (texte), et temporels (dates).
+En fonction de l'information stockées, le type de la colonne ne sera pas le même pour des raisons de clarté, de facilité et d'optimisation.
+
+Les types de données les plus courants :
+- VARCHAR : permet de stocker un texte ayant pour longueur maximale 255 caractères.
+- TEXT : permet de stocker un texte ayant pour longueur maximale 65535 caractères.
+- INT : permet de stocker un nombre positif ou négatif sans décimales (max 4 294 967 295)
+- FLOAT : permet de stocker un nombre positif ou négatif avec décimales
+- DATE : permet de stocker une date au format YYYY-MM-DD.
+- DATETIME : permet de stocker une date et une heure au formet YYYY-MM-DD HH:mm:système
+- ENUM : permet de stocker une liste de choix, très ressemblant à un array en PHP.
+
+Il existe toutefois de nombreux autres types de données. Par exemple, pour les valeurs numériques : TINYINT, SMALLINT, MEDIUMINT, BIGINT.
+
+Pour des raisons d'optimisation et de performances, il est nécessaire de choisir les bons types de données et de limiter leurs tailles possibles.
+
+Les Clés Primaires
+**********
+Les identifiants (clé primaire) sont des champs particuliers car ils ne décrivent pas le sujet mais sont systématiquement présent dans chaque table, et ce en 1ere position.
+En effet, une clé primaire permet d'assurer l'unicité de chaque ligne de la table. Elle est souvent de type numérique (INT) et nommée "id" ou "id_nomTable", et autoincrémentée.
+Ces clés primaires permettent une sélection précises de la lecture (SELECT), la modification (UPDATE) ou la suppression (DELETE) au sein d'une table.
+
+Les Clés Etrangères
+**********
+Les clés étrangères sont des champs forcément clé primaire dans leur table d'origine. Elles se retrouvent présentes dans une table extérieure.
+En tant que primary key, l'auto-incrémentation est toujours activée.
+En tant que foreign key, l'auto-incrémentation n'est pas activée.
+
+Les relations
+**********
+MySql est un SGBDR, il est donc capable de gérer des relations entre différentes tables.
+Il est nécessaire que les deux tables aient un champ en commun, en principe, c'est le champ qui permet d'identifier un élément de la table principale de manière unique (clé primaire).
+
+Sécurité / utilisateur
+**********
+Mysql dispose d'un utilisateur par défaut root. Cet utilisateur est un super administrateur.
+
+Les requêtes
+**********
+Une requête permet de poser une question afin d'obtenir une réponse ou encore de donner un ordre.
+
+Il existe plusieurs types de requêtes : 
+- requête de sélection : requête question/réponse.
+- requête d'insertion : requête d'action, impact sur les données.
+- requête de modification : requête d'action, impact sur les données.
+- requête de suppression : requête d'action, impact sur les données.
+
+Nous terminons toutes les requêtes par un point-virgule, pour que MySql sache que nous avons terminé d'écrire et qu'il doit exister notre demande.

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="multiplication.css">
+    <title>Multiplication</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Table de multiplication</h1>
+        <div id="flex">
+            <section id="enonce">
+                <h2>Consigne</h2>
+                <div>
+                    <p>Ecrivez un programme multiplication.js qui fait saisir un nombre à l'utilisateur puis affiche la
+                        table de
+                        multiplication de ce nombre.</p>
+                    <p>Ensuite, améliorez votre programme pour vérifier que le nombre saisi soit compris entre 2 et 9,
+                        en
+                        vous
+                        inspirant de
+                        l'exercice précédent.</p>
+                </div>
+            </section>
+            <section id="exercice">
+                <h2>Exercice</h2>
+                <div>
+                    <p>Choisissez un nombre entre 2 et 9 uniquement.</p>
+                    <form>
+                        <input type="number" id="userChoice">
+                        <div id="buttons"><input type="button" value="Go!" onclick="multiplie()">
+                            <input type="button" value="Reset" onclick="effacer()">
+                        </div>
+                    </form>
+                    <ul id="resultat"></ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="multiplication.js"></script>
+</body>
+
+</html>

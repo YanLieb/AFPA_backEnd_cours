@@ -1,0 +1,25 @@
+Quelques définitions
+**********
+
+PHP = Personal Homepage -> PHP Hypertext Preprocessor.
+
+Langage de programmation de scripts, spécialement conçu pour le développement web.
+
+Différences entre un site statique et un site dynamique :
+
+- Un site statique est codé en dur : HTML CSS JS. Les modifications de contenu doivent se faire dans le code.
+- Un site dynamique est composé de 3 éléments :
+    _ Un Front, le site visible par l'internaute.
+    _ Un back-office, réservé aux administrateurs.
+    _ Une base de données, qui contient les contenus. Les contenus sont directement modifiables depuis le back-office sans avoir à modifier le code.
+
+    _ Une page dynamique est créée à la demande.
+
+**********
+Architecture Client/Serveur
+
+Définition d'un serveur HTTP
+    _ La fonction principale d'un serveur web ou HTTP est de stocker et de délivrer des pages web en répondant à une requête HTTP. Cette requête est envoyée par le navigateur (client) quand on saisit une URL. Le protocole de communication HyperText Tranfer Protocol (HTTP) permet de dialoguer avec le logiciel client, généralement un navigateur web.
+
+Conclusion : 
+Le PHP est donc interprété côté serveur.

@@ -1,0 +1,43 @@
+html{
+    background: linear-gradient(rgb(84, 192, 147),rgb(76, 166, 182));
+    height : 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#container {
+    width:80%;
+    margin: auto;
+    display: flex;
+    flex-flow: column;
+    row-gap: 3rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+#exercice form {
+    display: flex;
+    flex-flow: column;
+    row-gap: 1rem;
+    align-items: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+@media (min-width:1080px) {
+    #container {
+        width: 50%;
+    }
+} 

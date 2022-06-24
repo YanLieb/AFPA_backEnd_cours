@@ -1,0 +1,120 @@
+Avec Xampp vous pouvez utiliser Shell situé sur le panneau d'administration ou lancer une invite de commande en se positionnant dans le dossier bin de mysql
+
+Se connecter à mysql sur windows : 
+mysql -u root -p 
+
+Pour les mac : 
+/Applications/MAMP/Library/bin/mysql -uroot -p
+
+Lister les base de données
+SHOW DATABASES;
+
+Créer une base de données
+CREATE DATABASE [nomdelabase] DEFAULT CHARACTER SET utf8mb4;
+
+Utiliser une base de données
+USE [nomdelabase] ;
+
+Supprimer une base de données
+DROP DATABASE [nomdelabase] ;
+
+exemple de création d'une table : 
+
+CREATE TABLE user (
+    id_user INT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(40) NOT NULL,
+    prenom VARCHAR(40) NOT NULL,
+    age INT(2),
+    PRIMARY KEY (id_user)
+)
+ENGINE=INNODB; 
+
+Le moteur d'une table définit la manière dont elle est gérée. Le moteur InnoDB, permet notamment de définir des relations entre plusieurs tables.
+
+SHOW TABLES; (voir les tables de la base de données sur laquel on est positionné)
+
+CREATE 
+**********
+INSERT INTO user (nom, prenom, age) VALUES ('Doe', 'John', 30);
+
+--syntaxe alternative
+
+INSERT INTO user SET nom = 'Doe', prenom = 'John', age = 30;
+La syntaxe alternative ne permet pas d'insérer plusieurs séries de valeurs en une seule requête.
+
+UPDATE
+***********
+permet de modifier une ou plusieurs lignes existantes d'une table
+
+UPDATE user SET age = 50 WHERE id_user = 2;
+
+ATTENTION : une requête UPDATE sans clause WHERE affectera toutes les lignes de la table
+
+DELETE 
+******
+permet de supprimer une ou plusieurs lignes depuis une table.
+ex:
+DELETE FROM user WHERE id_user = 4; 
+je supprime la ligne de la table user dont l'identifiant est 4
+ATTENTION : une requête DELETE sans clause WHERE affectera toutes les lignes de la table
+
+SELECT/FROM
+*************
+Permet de lire de l'information depuis une table.
+La clause SELECT précise la liste des colonnes à remonter ou * pour remonter toutes les colonnes de la table.
+La clause FROM précise la table sur laquelle doit être effectuée la sélection.
+On peut utiliser des fonctions SQL dans la clause SELECT
+
+SELECT * FROM user ;
+SELECT prenom FROM user;
+
+Permet de compter le nombre de lignes remontées par une requête.
+SELECT COUNT(id_user) FROM user;
+
+SELECT nom, prenom FROM user WHERE id_user = 1; Remonte le nom et le prenom de la donnée portant l'id_user 1
+
+ORDER BY
+*********
+Réservé aux requêtes SELECT, permet de trier la liste des résultats de la requête, en ordre croissant (ASC) ou décroissant (DESC). Par défaut, si on ne précise pas l'ordre de tri, c'est un tri croissant qui est effectué. On peut combiner plusieurs clauses de tri en les séparant avec des virgules.
+
+SELECT * FROM user ORDER BY prenom DESC;  Remonte tous les user triés par prenom décroissante
+
+LIMIT
+******
+Réservé aux requêtes SELECT, permet de restreindre la sélection en précisant un nombre de lignes, et éventuellement un point de départ, permettant entre autres de gérer une pagination.
+
+SELECT * FROM user LIMIT 2 ; remonte les 2 premières données 
+SELECT * FROM user LIMIT 1, 2 ; remonte 2 users à partir de la ligne 1 
+Le 1er chiffre correspond à la position de départ (0 = 1er enregistrement), le second indique le nombre de résultats à renvoyer. 
+
+Fonction prédéfinie SQL
+************************
+
+COUNT 
+-----
+Permet de compter le nombre de lignes remontées par une requête.
+SELECT COUNT(id_user) FROM user; 
+
+AVG 
+----
+Calcule et renvoit la moyenne de la colonne scores pour toutes les lignes
+SELECT AVG(age) FROM user; 
+
+SUM 
+----
+Permet de faire la somme de tous les valeurs d'une colonne.
+SELECT SUM(age) FROM user; 
+
+Import et Export
+*****************
+
+MySQL offre la possibilité d'importer/exporter des données en ligne de commandes. Bien que moins intuitif, cela peut s'avérer très utile si la base de données est de taille importante.
+A faire à partir du shell de xampp./!\
+
+mysqldump -u root -p nom_de_la_base > fichier_dump.sql
+
+Pour l'import 
+
+mysqldump -u root -p nom_de_la_base < fichier_dump.sql
+
+On notera le sens différent du chevron entre l'import < et l'export >.

@@ -1,0 +1,101 @@
+Une base de données est un ensemble de données stockées sur un support informatique organisé et structuré.
+Pour pouvoir gérer et interagir avec cette base de données, on lui envoit des messages, appelés des requêtes.
+On utilise également un système permettant de gérer cette base de données (SGBD) et un langage pour transmettre les instructions (SQL : Structured Query Language)
+Nous utiliserons MySQL comme SGBD (Système de Gestion de Base de Données)
+La plupart des SGBD sont basés sur un modèle client-serveur, c'est-à-dire que la base de données se trouve sur un serveur.
+
+********************
+Acronymes
+********************
+MCD : Modèle Conceptuel de Données
+    Plan de base de données avant de la créer
+
+SGBD : Système de Gestion de Base de Données
+    Accueille, exploite et fait fonctionner des bases de données (MySQL, Oracle, Sql Server, PostgreSql, etc.)
+
+BDD : Base de Données
+    Emplacement des données sauvegardées
+
+SQL : Structured Query Language
+    Langage de requêtes qui nous permet d'échanger des informations avec la base de données. Une fois les informations enregistrées, il est important de pouvoir les gérer (ajout, modification, suppression, consultation). Toutes ces actions passent par une requête MySQL
+
+*******************
+Etape de Création d'un projet informatique
+*******************
+- Recueil des besoins => création d'un cahier des charges
+- Diagrammes et modélisations
+- Conception => Définition des choix techniques (choix des langages, framework)
+- Programmation
+- Test
+- Déploiement = mise en production
+
+*******************
+Définitions
+*******************
+- Dictionnaire de données :
+    Il permet de faire la liste de l'ensemble des données utilisées dans l'outil et de définir le type de données.
+
+- Modélisation d'une base de données :
+    Avant de créer une base de données, il est essentiel de se poser et de réfléchir sur la modélisation. En effet, une base de données va servir de support à une application informatique (pas de droit à l'erreur).
+    Il faut donc faire un recueil des besoins précis : cahier des charges, interview, documents permettant des cerner les besoins, ancien système informatique.
+    toutes les informations receuillies vont servir à constituer le dictionnaire de données.
+    
+    La modélisation repose sur des concepts simples :
+        * entité : objet du monde réel avec une existence indépendante.
+        * association : lien logique entre les entités => définie par un verbe et éventuellement des attributs.
+        * attribut : propriétés d'une entité ou d'une association.
+    
+    La cardinalité est une notion OBLIGATOIRE du modèle qui permet de préciser l'association et d'imposer des contraintes comme par exemple obliger une commande à avoir au moins 1 produit commandé. el choix des cardinalités sont discutables en fonction des besoins et du contexte.
+
+    Exemple :
+
+             {1,1}                 {0,n}
+    Homme ------------ Fils de -------------  Femme
+
+    Méthode MERISE (Méthode d'Etude et de Conception de Base de Données)
+        Méthode d'étude et de réalisation pour système d'entreprise.
+    
+    Elle se décompose en 3 niveaux : 
+        - Niveau Conceptuel (MCD)
+            * Réprésentation graphique et structurée des informations stockées en base de données.
+            * Définit les dépendances fonctionnelles.
+            * Ce modèle est notamment destiné à éviter les redondances d'informations.
+            * On trouve dans le MCD les entités (regroupement d'informations permettande de définir un objet ou un individu au sein d'un système d'information), les associations et les cardinalités.
+
+            NB : 
+                _ On nomme les associations par un verbe. Elles peuvent être porteuses de données; par exemple : l'association "est facturé" pourrait porter la donnée 'quantité'.
+                _ Pour qu'une association soit porteuse de données, il faut qu'elle soit dans une relation de type n,n.
+                Une association peut être binaire (lien entre 2 entités) ou ternaire (lien entre 3 entités) ou réflexive.
+
+        - Niveau Logique (MLD)
+            * Ajoute au MCD la notion d'organisation. Le MLD indique comment les données seront organisées.
+            * On y ajoute les clés étrangères, qu'on relie par une flèche.
+            * Pour les associations 1,N (CIF Contrainte d'Intégrité Fonctionnelle), la clé du côté N de la relation devient clé étrangère du côté 1 de la relation. Si cette relation avait des attributs, ils iront aussi du côté 1 de la relation.
+            * Pour les associations N,N (CIM = Contrainte d'Intégrité Multiple), une nouvelle entité est créée, regroupant les clés étrangères des entités associées ainsi que l'attibut de l'association.
+
+        - Niveau Physique (MPD)
+            * Entités / relations > deviennent des tables.
+            * Attributs > champs.
+            * Identifiants > clés primaires.
+
+    - Dépendance Fonctionnelle 
+        Une donnée B dépend fonctionnellement d'une donnée A lorsque la connaissance de la valeur de la donnée A nous permet de prendre connaissance d'une et seulement une valeur de la donnée B.
+        Ex : la connaissance de la valeur d'un numéro de client nous permet de connaître sans ambiguité la valeur d'un et d'un seul nom de client.
+
+    - Normalisation
+        Le processus de normalisation est réalisé en étape et a pour objectif => une base de donnée avec une structure simple, stable, avec un minimum de redondances (normalisé).
+        On utilise surtout les 3 premières formes normales de normalisation. Il en existe au total 8.
+            
+            Première forme normale : 
+                * Elle possède une clé primaire. Une clé primaire peut être naturelle (référence,numéro de sécurité sociale) ou artificielle = numérotation incrémentée artificiellement (préférée à la naturelle)
+                * Cette clé sert à identifier chaque ligne de façon unique; la valeur de chaque attribut est atomique, c'est-à-dire qu'elle n'est pas décomposable.
+                    Ex : "John Doe" n'est pas une valeur atomique car elle peut être divisée en 2 attributs = nom & prénom.
+                        Une adresse, pour être atomique, devra être décomposée en numéro, rue, ville, CP, etc. pour respecter la 1FN.
+            
+            Deuxième forme normale : 
+                * Elle est en 1FN. 
+                * Tous les attributs non-clés dépendent complètement de la clé primaire (pas de dépendance partielle).
+
+            Troisième forme normale :
+                * Elle est en 2NF.
+                * On n'y trouve aucune dépendance transitive entre les attributs clé et la clé primaire.

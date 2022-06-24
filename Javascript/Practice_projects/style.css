@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#calculator {
+    width: 100vh;
+    margin: auto;
+    font-size: 3rem;
+}
+
+#calculator table {
+    width: 100%;
+    margin: auto;
+    border: 5px solid #000;
+    border-radius: 1rem;
+}
+
+#calculator table tr {
+    text-align: center;
+    height: 4rem;
+}
+
+#calculator table tr td button {
+    border: 3px solid #000;
+    border-radius: 1rem;
+    padding: 30px;
+    width: 100%;
+    font-size: 3rem;
+    background-color: #fff;
+    transition: .1s ease-in-out;
+}
+
+#calculator table tr td button:hover {
+    background-color: #cbcbcb;
+}
+
+#result {
+    width: 100vh;
+    height: 10rem;
+    border: 5px solid #000;
+    border-radius: 1rem;
+    padding: 30px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
